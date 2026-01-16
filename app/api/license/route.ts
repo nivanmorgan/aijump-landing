@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import Stripe from 'stripe';
+import { createClient } from '@supabase/supabase-js';
+
+export const dynamic = 'force-dynamic';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
+  apiVersion: '2023-08-16',
 });
 
 const supabase = createClient(
