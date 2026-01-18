@@ -55,7 +55,7 @@ export default function Home() {
             <span className="text-white font-semibold"> VSCode</span>
           </p>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Intelligent automation for Terraform, Docker, and Kubernetes. Stop writing boilerplate—let AI handle your infrastructure.
+            PurfectLabs builds AI-powered DevOps tools that bridge shipping, management, observability, and security.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function Home() {
               href="https://marketplace.visualstudio.com/items?itemName=purfectlabs.aijump-extension"
               className="block w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
-              Install Free
+              Install Starter
             </a>
           </div>
 
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="mb-8">
               <h3 className="text-3xl font-bold mb-2">Pro</h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-black">$7.99</span>
+                <span className="text-5xl font-black">$9.99</span>
                 <span className="text-blue-100 text-lg">/month</span>
               </div>
               <p className="text-blue-100 text-sm mt-2">7-day free trial • Cancel anytime</p>
@@ -137,7 +137,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-bold">Everything in Free, plus:</p>
+                  <p className="font-bold">Everything in Starter, plus:</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
