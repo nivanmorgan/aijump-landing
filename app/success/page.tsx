@@ -116,7 +116,7 @@ function SuccessContent() {
                 Don't worry! Check your email for your license key, or contact support.
               </p>
               <a
-                href="mailto:support@aijump.dev"
+                href="mailto:hello@purfectlabs.com"
                 className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition"
               >
                 Contact Support

@@ -62,7 +62,7 @@ cp .env.example .env.local
 Fill in your values:
 
 ```env
-NEXT_PUBLIC_BASE_URL=https://aijump.dev
+NEXT_PUBLIC_BASE_URL=https://aijump.purfectlabs.com
 STRIPE_SECRET_KEY=sk_live_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 STRIPE_PRICE_ID=price_...
@@ -112,5 +112,4 @@ Format: `base64(email:expiry:signature)`
 ## Support
 
 For issues or questions:
-- Email: support@aijump.dev
-- GitHub: [github.com/yourusername/aijump-landing](https://github.com/yourusername/aijump-landing)
+- Email: hello@purfectlabs.com

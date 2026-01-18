@@ -40,6 +40,13 @@ export async function GET(request: Request) {
       );
     }
 
+    if (data.status !== 'active' && data.status !== 'trialing') {
+      return NextResponse.json(
+        { error: 'License inactive', status: data.status },
+        { status: 403 }
+      );
+    }
+
     return NextResponse.json({
       license_key: data.license_key,
       email: data.email,

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
+import { createHmac } from 'crypto';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,11 +19,20 @@ function generateLicenseKey(email: string, subscriptionId: string): string {
   // Set expiry to 1 year from now
   const expiry = Date.now() + 365 * 24 * 60 * 60 * 1000;
   
-  // Simple signature (in production, use proper HMAC)
-  const signature = Buffer.from(`${email}:${subscriptionId}:${process.env.LICENSE_SECRET}`).toString('base64').substring(0, 16);
+  const signature = signLicense(email, expiry, subscriptionId);
   
   const licenseData = `${email}:${expiry}:${signature}`;
   return Buffer.from(licenseData).toString('base64');
+}
+
+function signLicense(email: string, expiry: number, subscriptionId: string): string {
+  const secret = process.env.LICENSE_SECRET || '';
+  const payload = `${email}:${expiry}:${subscriptionId}`;
+  return createHmac('sha256', secret).update(payload).digest('base64url');
+}
+
+function isActiveStatus(status: Stripe.Subscription.Status | null | undefined): boolean {
+  return status === 'active' || status === 'trialing';
 }
 
 export async function POST(request: Request) {
@@ -50,19 +60,29 @@ export async function POST(request: Request) {
         const customerId = session.customer as string;
         const subscriptionId = session.subscription as string;
 
-        if (customerEmail && customerId) {
-          // Generate license key
+        if (customerEmail && customerId && subscriptionId) {
+          const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+          const status = subscription.status;
+
+          if (!isActiveStatus(status)) {
+            console.log(`Subscription not active for ${customerEmail}: ${status}`);
+            break;
+          }
+
           const licenseKey = generateLicenseKey(customerEmail, subscriptionId);
 
-          // Store in database
-          const { error } = await supabase.from('licenses').insert({
-            email: customerEmail,
-            license_key: licenseKey,
-            stripe_customer_id: customerId,
-            stripe_subscription_id: subscriptionId,
-            status: 'active',
-            created_at: new Date().toISOString(),
-          });
+          const { error } = await supabase.from('licenses').upsert(
+            {
+              email: customerEmail,
+              license_key: licenseKey,
+              stripe_customer_id: customerId,
+              stripe_subscription_id: subscriptionId,
+              status,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            },
+            { onConflict: 'stripe_customer_id' }
+          );
 
           if (error) {
             console.error('Database error:', error);

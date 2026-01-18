@@ -61,13 +61,13 @@ export default function Home() {
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-32">
-          {/* Free Tier */}
+          {/* Starter Mode */}
           <div className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-700/50">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-2">Free</h3>
+              <h3 className="text-3xl font-bold mb-2">Starter</h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-5xl font-black">$0</span>
-                <span className="text-gray-400 text-lg">/forever</span>
+                <span className="text-gray-400 text-lg">/limited</span>
               </div>
             </div>
             <div className="space-y-4 mb-8">
@@ -105,6 +105,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <p className="text-sm text-gray-500 mb-6">
+              Starter is read-only. Pro unlocks generation, deployment, and validation.
+            </p>
             <a
               href="https://marketplace.visualstudio.com/items?itemName=purfectlabs.aijump-extension"
               className="block w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
@@ -189,6 +192,35 @@ export default function Home() {
             >
               {loading ? 'Processing...' : 'Start 7-Day Free Trial'}
             </button>
+          </div>
+        </div>
+
+        {/* Starter vs Pro */}
+        <div className="max-w-5xl mx-auto mb-32">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Starter: Inspect</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li>• Learn project structure</li>
+                  <li>• View learned context</li>
+                  <li>• Command index and guidance</li>
+                  <li>• Read-only insights</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Pro: Build & Ship</h3>
+                <ul className="space-y-3 text-gray-200">
+                  <li>• Generate infrastructure scaffolding</li>
+                  <li>• Baseline reports and validation</li>
+                  <li>• Deployment scripts and publish flow</li>
+                  <li>• Feasibility and readiness analysis</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 text-sm text-gray-400">
+              Start with a 7-day trial to unlock Pro immediately.
+            </div>
           </div>
         </div>
 

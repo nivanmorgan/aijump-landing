@@ -1,11 +1,11 @@
 -- AiJump Licenses Table
--- Run this in Supabase SQL Editor: https://supabase.com/dashboard/project/kqtdaqihmwkbmgkhyoga/sql
+-- Run this in Supabase SQL Editor: https://supabase.com/dashboard/project/zaznswgcpbscczoavkky/sql
 
 CREATE TABLE IF NOT EXISTS licenses (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT NOT NULL,
   license_key TEXT NOT NULL UNIQUE,
-  stripe_customer_id TEXT,
+  stripe_customer_id TEXT UNIQUE,
   stripe_subscription_id TEXT,
   status TEXT NOT NULL CHECK (status IN ('active', 'trialing', 'canceled', 'payment_failed', 'past_due')),
   created_at TIMESTAMPTZ DEFAULT NOW(),

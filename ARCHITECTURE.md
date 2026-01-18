@@ -394,10 +394,6 @@ git push origin main
 - **Supabase Dashboard**: https://supabase.com/dashboard/project/kqtdaqihmwkbmgkhyoga
 - **Vercel Dashboard**: https://vercel.com/purfect-labs/aijump-landing
 
-### GitHub Repos
-- **Extension**: https://github.com/nivanmorgan/aijump-extensions
-- **Landing**: https://github.com/nivanmorgan/aijump-landing
-
 ### Management
 - **Marketplace Publisher**: https://marketplace.visualstudio.com/manage/publishers/purfectlabs
 - **Azure DevOps**: https://dev.azure.com (for PAT management)
@@ -414,4 +410,4 @@ git push origin main
 
 **Last Updated**: 2026-01-18  
 **Version**: 0.2.0  
-**Status**: Production (Free tier live, Pro tier pending Stripe setup)
+**Status**: Production (Stripe setup pending)
