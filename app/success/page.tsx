@@ -96,7 +96,7 @@ function SuccessContent() {
 
               <div className="flex gap-4">
                 <a
-                  href="https://marketplace.visualstudio.com/items?itemName=aijump.aijump"
+                  href="https://marketplace.visualstudio.com/items?itemName=aijump.aijump-extension"
                   className="flex-1 text-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition"
                 >
                   Get Extension
