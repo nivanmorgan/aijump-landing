@@ -127,7 +127,7 @@ export default function Home() {
                 <span className="text-5xl font-black">$9.99</span>
                 <span className="text-blue-100 text-lg">/month</span>
               </div>
-              <p className="text-blue-100 text-sm mt-2">7-day free trial • Cancel anytime</p>
+              <p className="text-blue-100 text-sm mt-2">7-day free trial • 50% off your first month</p>
             </div>
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">

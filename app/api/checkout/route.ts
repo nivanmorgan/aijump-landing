@@ -10,9 +10,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 export async function POST(request: Request) {
   try {
     const { priceId } = await request.json();
+    const couponId = process.env.STRIPE_COUPON_ID;
 
     // Create Stripe Checkout Session
-    const session = await stripe.checkout.sessions.create({
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       mode: 'subscription',
       payment_method_types: ['card'],
       line_items: [
@@ -32,7 +33,13 @@ export async function POST(request: Request) {
           product: 'aijump-pro',
         },
       },
-    });
+    };
+
+    if (couponId) {
+      sessionParams.discounts = [{ coupon: couponId }];
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     return NextResponse.json({ url: session.url });
   } catch (error: any) {
