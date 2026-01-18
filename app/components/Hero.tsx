@@ -42,7 +42,7 @@ export default function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
                 >
-                    The intelligent Infrastructure-as-Code assistant that turns your requirements into production-ready deployment stacks.
+                    The military-grade Infrastructure-as-Code assistant that turns your requirements into production-ready deployment stacks.
                 </motion.p>
 
                 <motion.div

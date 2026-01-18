@@ -34,9 +34,12 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <button className="w-full py-4 rounded-xl bg-neutral-800 text-white font-bold hover:bg-neutral-700 transition-colors">
+                        <a
+                            href="https://marketplace.visualstudio.com/items?itemName=purfectlabs.aijump-extension"
+                            className="block w-full text-center py-4 rounded-xl bg-neutral-800 text-white font-bold hover:bg-neutral-700 transition-colors"
+                        >
                             Install Free
-                        </button>
+                        </a>
                     </div>
 
                     {/* Pro */}
@@ -47,7 +50,7 @@ export default function Pricing() {
 
                         <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold text-white">$9</span>
+                            <span className="text-4xl font-bold text-white">$9.99</span>
                             <span className="text-gray-500">/mo</span>
                         </div>
 
@@ -66,9 +69,12 @@ export default function Pricing() {
                             ))}
                         </ul>
 
-                        <button className="w-full py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-500/25">
+                        <a
+                            href="https://marketplace.visualstudio.com/items?itemName=purfectlabs.aijump-extension"
+                            className="block w-full text-center py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-500/25"
+                        >
                             Start 7-Day Trial
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

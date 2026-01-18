@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import StatsGraph from './components/StatsGraph';
 import FeatureGrid from './components/FeatureGrid';
 import CodeDemo from './components/CodeDemo';
+import Comparison from './components/Comparison';
 import Pricing from './components/Pricing';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       {/* Bento Grid Features */}
       <FeatureGrid />
       <CodeDemo />
+      <Comparison />
       <Pricing />
 
       {/* Footer */}

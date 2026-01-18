@@ -5,9 +5,9 @@ import { Terminal } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const codeSteps = [
-    { text: "aijump init", output: "Initializing project structure..." },
-    { text: "aijump scan", output: "Found: Next.js + Tailwind + Supabase" },
-    { text: "aijump generate k8s", output: "Generated: deployment.yaml, service.yaml" },
+    { text: "AiLearn", output: "Scanner Active. Indexing codebase... [OK] React detected. [OK] 12 API routes mapped." },
+    { text: "AiBuild", output: "Analyzing architecture... Generated: Dockerfile, k8s-deployment.yaml. (0 vulnerabilities)" },
+    { text: "AiPublish", output: "Compiling MonoGenesis artifact... DONE. Deploy script ready: ./deploy.sh" },
 ];
 
 export default function CodeDemo() {
@@ -40,8 +40,8 @@ export default function CodeDemo() {
                                 <div
                                     key={i}
                                     className={`p-4 rounded-xl transition-all duration-300 ${i === activeStep
-                                            ? 'bg-blue-500/10 border-l-4 border-blue-500'
-                                            : 'bg-transparent border-l-4 border-transparent'
+                                        ? 'bg-blue-500/10 border-l-4 border-blue-500'
+                                        : 'bg-transparent border-l-4 border-transparent'
                                         }`}
                                 >
                                     <h3 className={`font-mono font-bold ${i === activeStep ? 'text-blue-400' : 'text-gray-500'}`}>
