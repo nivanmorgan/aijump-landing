@@ -106,7 +106,7 @@ export default function Home() {
               </div>
             </div>
             <a
-              href="https://marketplace.visualstudio.com/items?itemName=aijump.aijump-extension"
+              href="https://marketplace.visualstudio.com/items?itemName=purfectlabs.aijump-extension"
               className="block w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
               Install Free
